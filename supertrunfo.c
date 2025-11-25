@@ -1,11 +1,19 @@
 #include <stdio.h>
 
 int main (){
+
+/*Cast explícito: (float)populacao para garantir divisão em ponto flutuante
+PIB Per Capita corrigido: Multipliquei o PIB por 1 bilhão para converter para reais antes da divisão
+Formatação melhorada:
+%.2f para 2 casas decimais na maioria dos valores
+%.1f para o PIB (1 casa decimal)
+%d em vez de %i para inteiros (mais comum)
+Literal float: 1.0f em vez de 1 para garantir operação em float*/
    
     //Carta 01
     char estado [] = "B";
     char codigo [] = "B01";
-    char cidade [] = "Salvador";
+    char cidade [] = "Salvador(BA)";
     unsigned long int populacao = 2564204;
     float area = 692.9;
     float pib = 73.5; // em bilhões de reais
@@ -23,7 +31,7 @@ int main (){
     //Carta 02
     char estado2 [] = "A";
     char codigo2 [] = "A01";
-    char cidade2 [] = "Aracaju";
+    char cidade2 [] = "Aracaju (SE)";
     unsigned long int populacao2 = 630932;
     float area2 = 182.16;
     float pib2 = 16.5; // em bilhões de reais
@@ -39,6 +47,9 @@ int main (){
     estado2, codigo2, cidade2, populacao2, area2, pib2, pontosTuristicos2, densidade2, pibPerCapita2, superPoder2);
 
     // Comparações cartas
+
+    /* Utilizando estrutura de decisao para mostrar o vencedor.
+        
     int comparacaoPopulacao = populacao > populacao2;
     int comparacaoArea = area > area2;
     int comparacaoPIB = pib > pib2;
@@ -54,17 +65,18 @@ int main (){
     printf("Pontos Turisticos: Carta 1 venceu (%d) \n", comparacaoPontosTuristicos);
     printf("Densidade Populacional Carta 1 venceu (%d) \n", comparacaoDensidadePopulacional);
     printf("PIB Per Capita: Carta 1 venceu (%d) \n", comparacaoPIBPerCapita);
-    printf("Super Poder Carta: 1 venceu (%d) \n", comparacaoSuperPoder);
-  
-   
+    printf("Super Poder Carta: 1 venceu (%d) \n", comparacaoSuperPoder);*/
 
-    return 0;
+    //Utilizando estrutura de decisao para mostrar o vencedor.
+    printf("Atributo: Populacao\n");
+    printf("Carta 1 - %s: %lu\n", cidade, populacao);
+    printf("Carta 2 - %s: %lu\n", cidade2, populacao2);
+    if(populacao > populacao2){
+         printf("Resultado: Carta 1 %svenceu!\n", cidade);
+    } else {
+        printf("Resultado: Carta 2 %s venceu!\n", cidade2);
+    }
+     
+
 }
 
-/*Cast explícito: (float)populacao para garantir divisão em ponto flutuante
-PIB Per Capita corrigido: Multipliquei o PIB por 1 bilhão para converter para reais antes da divisão
-Formatação melhorada:
-%.2f para 2 casas decimais na maioria dos valores
-%.1f para o PIB (1 casa decimal)
-%d em vez de %i para inteiros (mais comum)
-Literal float: 1.0f em vez de 1 para garantir operação em float*/
